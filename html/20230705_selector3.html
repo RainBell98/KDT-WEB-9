@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* 속성값을 변수화 
+        --로 시작*/
+        :root{
+            --main-color :orange;
+            --main-bg-color:blue;
+        }
+        div{
+            color: var(--main-color);
+            background-color: var(--main-bg-color);
+        }
         /* .fruits h3:last-child{
             color: yellow;
         }
@@ -83,10 +93,11 @@
     <!-- <input type="text" value="HEROPY">
     <input type="password" value="1234">
     <input type="text" value="ABCD" disabled> -->
-    <input type="text" placeholder="이름">
+    <!-- <input type="text" placeholder="이름">
     <input type="password" value="pw">
     <input type="text" value="010-0000-0000">
     <input type="text" placeholder="핸드폰">
-    <input type="text" placeholder="주민번호" disabled>
+    <input type="text" placeholder="주민번호" disabled> -->
+    <div>안녕</div>
 </body>
 </html>
