@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        @font-face {
+        font-family: 'omyu_pretty';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+        }
+        :root{
+            font-size: 16px;
+        }
+        /* div{
+            font-weight: 400;
+        } */
+        .main{
+            font-size: 50px;
+        }
+        .font-px{
+            font-size: 20px;
+        }
+        .font-em{
+            /* em ->가장 가까이 있는 부모요소의 사이즈 배수 */
+            font-size: 1.5em;
+            font-weight: 900;
+            font-family: 'omyu_pretty';
+
+        }
+        .font-rem{
+            /* rem-> 가장 상위요소의 사이즈 배수 */
+            font-size: 1.5rem;
+            line-height: 2;
+            font-family: 'Nanum Pen Script', cursive;
+             
+        }
+
+        .font-per{
+            font-size: 100%;
+            font-family: 'Nanum Pen Script', cursive;
+        }
+        .font-nu{
+            font-family: 'omyu_pretty';
+            text-align: right;
+        }
+        .font-goo{
+            font-family: 'Nanum Pen Script', cursive;
+            text-align: center;
+        }
+        .inline-block{
+            display: inline-block;
+        }
+        span{
+            display: inline-block;
+        }
+        /* span태그 기본값: display:inline */
+        /* div태그 기본값: display:block */
+        main{
+            background-color: orange;
+            width: auto;
+            height: 200px;
+        }
+        div{
+            width: 200px;
+            height: 100px;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <main>
+        <div class="font-px">Hello</div>
+        <div class="font-em">Hello</div>
+        <div class="font-rem">Hello</div>
+        <div class="font-per">Hello World</div>
+    </main> -->
+    <!-- <div class="font-goo">Hello World -구글</div>
+    <div class="font-nu">Hello World -눈누</div> -->
+    <!-- <div>동해물과 백두산이 마르고 닳도록</div>
+    <div>동해물과 백두산이 마르고 닳도록</div>
+    <div>동해물과 백두산이 마르고 닳도록</div>
+    <div>동해물과 백두산이 마르고 닳도록</div> -->
+    <!-- <div style="background-color: red;">aaa</div>
+    <span style="background-color: blue;">bbb</span>
+    <div style="display: inline-block; background-color: yellow;">ccc</div> -->
+    <main>
+        <div style="background-color: skyblue; float: left;">HTML</div>
+        <div style="background-color: green; float: left;">CSS</div>
+        <div style="background-color: red; float: left;">Javascript</div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            border: 15px solid red;
+            background-color: orange;
+        }
+        .border-1{
+            border-top: 10px solid black ;
+            border-bottom: 20px dashed red;
+            border-left: 15px dotted purple;
+            border-right: 5px outset blue;
+            border-radius: 10px 30px 50px 90px;
+            
+        }
+        .border-2{
+            border-top-style: dashed ;
+            border-bottom-style: dotted;
+            border-right-style:  outset;
+            border-left-style:  solid;
+        }
+        .content-box{
+            box-sizing: content-box;
+            padding: 20px;
+            /* visibility: hidden; */
+            /* display: none; */
+        }
+        .border-box{
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        .border-box:hover{
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="box content-box">ABC</div>
+    <br/><br/>
+    <div class="box border-box">ABC</div>
+</body>
+</html>

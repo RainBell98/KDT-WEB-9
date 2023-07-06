@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box-1{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            padding: 50px;
+            overflow-y: scroll;
+        }
+        .box-2{
+            width: 250px;
+            height: 150px;
+            line-height: 150px;
+            background-color: orange;
+        }
+        .b{
+            display: flex;
+            height: 400px;
+            background-color: red;
+            /* flex <- 바로 자식요소를 inline-block으로 만듬 */
+            justify-content: center;
+            /* flex일 때 사용가능,가로 가운데 정렬 */
+            align-items: center;
+            /* flex일 때 사용가능,세로 가운데 정렬 */
+        }
+        .child-b{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class = "box-1">
+        <div class = "box-2"></div>
+    </div> -->
+    <div class="b">
+        <div class="child-b"></div>
+        <div class="child-b"></div>
+        <div class="child-b"></div>
+    </div>
+    
+</body>
+</html>
