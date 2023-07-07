@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            /* width: 600px; */
+             height: 500px; 
+            /* background-color: blue; */
+            display: flex;
+            /* display: flex <- 자식요소를 block으로 바꿈 */
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            align-content: flex-start;
+            /* 기본값 row(가로), column(세로) */
+            /* flex-wrap: wrap; */
+            /* 기본값 nowrap/ wrap을 쓰면 줄바꿈 가능 */
+        }
+        .box > div{
+            width: 100px;
+            height: 100px;
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        /* .box{
+            width: 500px;
+            height: 500px;
+        }
+        .item{
+            width: 100px;
+            height: 100px;
+        } */
+        .box{
+            width: 500px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+            /* align-content: center; */
+            justify-content: center;
+            align-items: center; 
+            background-color: black;
+        }
+        .box>.div{
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+        <div class="red"></div>
+        <div class="orange"></div>
+    </div>
+    <!-- <div class="container">
+        <div class="container-1">
+            <div></div>
+        </div>
+    </div> -->
+    
+</body>
+</html>
