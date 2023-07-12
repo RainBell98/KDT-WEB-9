@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>방명록입니다.</h4>
+    <div>
+        <div>작성자<input type="text" id="name"></div>
+        <div>내용<input type="text" id="story"></div>
+        <button type="button" value="작성" onclick="addRow()">작성</button>
+
+        <table id ="table" border=""1>
+            <td>번호</td>
+            <td>작성자</td>
+            <td>내용</td>
+            <td>작성일</td>
+        </table>
+    </div>
+    
+    <script>
+        let num = 1
+        function addRow(){
+            
+
+            // const table = document.getElementById("names")
+
+            // const newRow = table.insertRow()
+            // // const newCell1 = newRow.insertCell(0)
+            // const newCell2 = newRow.insertCell(1)
+            // const newCell3 = newRow.insertCell(2)
+            // const newCell4 = newRow.insertCell(3)
+            // let i =1
+            // let now = new Date()
+            // // newCell1.innerText = document.getElementById(i).value
+            // newCell2.innerText = document.getElementById("name").value
+            // newCell3.innerText = document.getElementById("story").value
+            // newCell4.innerText = `${year}-${month >= 10 ? month : "0"+month}-${date >= 10 ? date : "0"+date}`
+            // num++
+            // document.getElementById("name").value =""
+            // document.getElementById("story").value =""
+            
+
+            let table = document.querySelector("table")
+            let tr = document.createElement("tr")
+
+            let numId = document.createElement("td")
+            numId.innerText = num
+
+            let writerId = document.createElement("td")
+            let writer = document.getElementById("name").value
+            writerId.innerText = writer
+
+            let storyId = document.createElement("td")
+            let story = document.getElementById("story").value
+            storyId.innerText = story    
+            
+            let dateId = document.createElement("td")
+            let now = new Date()
+            let str = now.getFullYear()+"-"+(now.getMonth()+1)+'-'+now.getDate()
+            dateId.innerText = str
+
+            tr.appendChild(numId)
+            tr.appendChild(writerId)
+            tr.appendChild(storyId)
+            tr.appendChild(dateId)
+            table.appendChild(tr)
+
+            document.getElementById("name").value =""
+            document.getElementById("story").value =""
+            
+
+            num++
+
+
+        }
+    </script>
+</body>
+</html>

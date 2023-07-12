@@ -64,7 +64,7 @@
 
         // while (조건) {
         // }
-        // let fruits = ["apple", "banana", "orange", "grape"]
+        let fruits = ["apple", "banana", "orange", "grape"]
         // for(let i=0; i < fruits.length; i++) {
         //     if(fruits[i] == "banana") {
         //         continue
@@ -92,12 +92,51 @@
         // }
         // console.log(sum)
     
-        let fruits = ["apple", "banana", "orange", "grape"]
-        for(let fr of fruits){
-            console.log(fr)
-        }
-        
+        // let fruits = ["apple", "banana", "orange", "grape"]
+        // for(let fr of fruits){
+        //     console.log(fr)
+        // }
 
+        //forEach는 함수의 매개변수로 함수를 받음
+        // fruits.forEach(function (data,index,array){
+        //     console.log("data: ",data)
+        //     console.log("index: ",index)
+        //     console.log("array:" ,array)
+        // })
+
+        // fruits.forEach((data,index,array)=>{
+        //     console.log("data: ",data)
+        //     console.log("index: ",index)
+        //     console.log("array:" ,array)
+        // })
+        
+        fruits.forEach(function (){
+            console.log()
+        })
+        let arr =[]
+        let ans = 0
+        let answer = 0
+        let answ = 0
+        for(let i = 1; i<101;i++){
+            arr.push(i)
+        }
+        console.log(arr)
+
+        for(let i = 0; i<length.arr;i++){
+            ans += arr[i]
+        }   
+        console.log("for : ",ans)
+
+        for(let i of arr){
+            answ += i
+        }
+        console.log("forOf : ",answ)
+        
+        arr.forEach(function (j){
+            answer += j
+        })
+        console.log("forEach : ",answer)
+        
     </script>
 </body>
 </html>

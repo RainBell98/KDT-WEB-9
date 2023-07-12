@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = "Happy day~! "
+        console.log(str.length)
+
+        //toUpperCase,toLowerCase 변수에 저장해야 사용가능
+        console.log(str.toUpperCase())
+        console.log(str.toLowerCase())
+
+        console.log(str.indexOf('p'))
+
+        console.log(str.slice(2))//0,1번 자름
+        console.log(str.slice(2,5))//2번째부터 5전까지 자름
+
+        console.log(str.replace('p','a'))// 첫번째 나온 p를 a 바꿈
+        console.log(str.replaceAll('p','a'))//모든 p를 a로 바꿈
+
+        console.log(str.repeat(2))//문자열 2번 반복
+
+        console.log(str.trim())//양끝 공백 제거
+
+        console.log(str.split("a"))//매개변수로 들어온 문자열을 기준으로 str을 쪼개서 배열로 저장
+    </script>
+    
+    <script>
+        let hello ="Hello~"
+        helloArr = hello.split("")
+        console.log(helloArr)
+        
+        let reverseHello = helloArr.reverse()
+
+        let helloAgain = reverseHello.join("")
+        console.log(helloAgain)
+
+        console.log(hello.split("").reverse().join("/"))
+    </script>
+</body>
+</html>

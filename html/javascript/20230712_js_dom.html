@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .blue{
+            background-color: blue;
+        }
+        .green{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- <script>
+        let now = new Date() //2023-07-12(수) 기준
+        let expired = new Date('2023-06-07')
+
+        console.log(now)
+        console.log(expired)
+
+        console.log(now.getFullYear())
+        console.log(now.getMonth()+1)//현재 month에서 +1 을 해야 제대로 된 month이 나옴
+        console.log(now.getDate())
+        console.log(now.getDay())//요일은 숫자로 알려줌 ex: Mon :1 ,Tue : 2 , Sun : 0
+        console.log(now.getTime() > expired.getTime())// 1970년 1월 1일 기준으로 현재까지 걸린 초
+
+        let year = now.getFullYear()
+        let month = now.getMonth()+1
+        let date = now.getDate()
+        
+        console.log(`${year}-${month >= 10 ? month : "0"+month}-${date >= 10 ? date : "0"+date}`)
+    </script>
+
+    <script>
+        console.log(Math.PI)
+        console.log(Math.E)
+
+        console.log(Math.min(2,3,4,5,6))
+        console.log(Math.max(2,354,1,3,5,234,4954))
+        console.log(Math.random())
+        console.log(Math.round(7.5),Math.round(7.2))//반올림
+        console.log(Math.floor(7.9),Math.floor(7.2))//내림
+        console.log(Math.ceil(7.9),Math.ceil(7.2))//올림
+
+        console.log(Math.floor(Math.random() * (100 - 1) + 1))
+
+        console.log(Math.floor(Math.random()*6+1))
+
+    </script> -->
+    <div class="container">
+        <div id = "red" class="box red"></div>
+        <div id = "orange" class="box orange"></div>
+        <div class="box yellow"></div>
+    </div>
+    <button type ="button" onclick="createGreenBox()">생겨라!!</button>
+    <button type="button" onclick="removeBox()">사라져라!!</button>
+
+    <!-- <button type = "button" onclick = "redToggle()">깜빡 깜빡</button>
+    <button type = " button" onclick = "allToggle()">바꾸기</button> -->
+
+    <!-- <input type="text" name ="id"/> -->
+
+    <!-- <script>
+        let redBoxById = document.getElementById("red")
+        console.log(redBoxById)
+
+        let boxes = document.getElementsByClassName("box")//class는 여러곳에서 쓰일 수 있기 때문에 배열로 담긴다.
+        console.log(boxes)
+
+        let boxesByTag = document.getElementsByTagName("div")
+        console.log(boxesByTag)
+
+        let input = document.getElementsByName("id")
+        console.log(input)
+
+        let boxesBySelector = document.querySelector(".box")//하나만 선택
+        console.log(boxesBySelector)
+
+        let orangeBySelectorAll = document.querySelectorAll("#orange")//전체
+        console.log(orangeBySelectorAll)
+    </script> -->
+
+    <!-- <script>
+        color = ["red","orange","yellow"]
+        // document.write("안녕?")
+        //let redBox = document.getElementById("red")
+        // redBox.innerText = "aaa"
+        // console.log(redBox.innerText)//text만 가져옴
+        // console.log(redBox.innerHTML)//안에 있는 태그(html)도 가져옴
+        // console.log(redBox.textContent)
+
+        // console.log(redBox.className)
+        // redBox.className = "box yellow"
+
+        // console.log(redBox.classList.value)
+        function redToggle(){
+            let redBox = document.getElementById("red")
+            redBox.classList.toggle("red")
+            // if (redBox.classList.contains("red")){
+            //     let redBox = document.getElementById("red")
+            // }
+            // else{
+            //     redbox.classList.add("red")
+            // }
+
+            //classList속성은 toggle 함수 제공
+            //괄호 안에 들어온 값을 리스트 안에 존재하는 지 알아서 판단
+            //괄호 안에 들어온 값을 자동으로 추가하거나 삭제함.
+
+            //classList속성은 contatins 함수 제공
+            // 괄호 안에 들어온 값이 클래스에 존재하는 지 검사
+            // true false return
+
+            //classList속성은 remove 함수 제공
+            // 괄호 안에 들어온 값을 리스트 안에서 삭제
+                        
+            //classList속성은 add 함수 제공
+            // 괄호 안에 들어온 값을 리스트 안에 추가
+            } 
+        function allToggle(){
+            let allBoxes = document.querySelectorAll("box")
+
+            allboxes[Math.floor(Math.random()*3)].classList.toggle("box")
+            
+        }
+    </script> -->
+    <script>
+        // let redBox = document.getElementById("red")
+        // redBox.setAttribute("class","box orange")
+        let arr = ["box green","box yellow","box orange","box red"]
+
+        let container = document.querySelector(".container")
+        // console.log(container)
+        console.log(container.children)
+
+        let redBox = document.getElementById("red")
+        console.log(redBox.parentNode)
+        console.log(redBox.nextElementSibling)
+        
+        //let orangeBox = document.getElementById("orange")
+        //console.log(orangeBox.previousElementSibling)
+
+        function createGreenBox(){
+            let createBox = document.createElement('div')
+            createBox.className = arr[Math.floor(Math.random()*arr.length)]
+            
+            //container.append(createBox) 
+            // 부모요소(container)에 마지막 자식으로 괄호 안의 요소를 추가
+
+            // container.appendChild(createBox) 
+
+            // container.append("<div>안녕?</div>")
+
+            // append는 매개변수로 문자열과 노드객체를 모두 받을 수 있다.
+            // appendChild 매개변수로 노드객체만 받을 수 있다.
+            //container.prepend(createBox)
+
+            //부모요소(contanier)에 첫번째 자식으로 괄호 안의 요소
+
+            //orangeBox.before(createBox)
+            //orangeBox.after(createBox)
+        }
+
+
+        // redBox.setAttribute("class", "box orange")
+        function removeBox(){
+            let orangeBox = document.getElementById("orange")
+            orangeBox.remove()
+        }
+       
+
+    </script>
+
+</body>
+</html>
