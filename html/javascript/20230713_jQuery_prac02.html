@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <style>
+        tr>td:first-child{
+            color: red;
+        }
+        tr>td:last-child{
+            color: blue
+        }
+        td{
+            vertical-align: top;
+        }
+    </style>
 </head>
 <body>
     <div class = "add">
@@ -12,7 +23,7 @@
         <div>내용 : <input type="text" name="txt" id="txt"></div>
         <button class = "make" onclick="add()">작성</button>
     </div>
-    <table width = "400" height="400" class="Calendar">
+    <table width = "400" height="400" class="Calendar" style="text-align: center;">
         <tr>
             <td>일</td>
             <td>월</td>
@@ -29,7 +40,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td class="one">1</td>
+            <td>1</td>
         </tr>
         <tr>
 
