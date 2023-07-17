@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            height: 500px;
+            /* minmax(최소,최대) */
+            /* grid-template-columns: repeat(3,minmax(100px,auto)); */
+            grid-template-columns: repeat(3,200px);
+            grid-template-rows: repeat(3,200px);
+
+            /* row-gap: 20px;
+            column-gap: 20px; */
+            /* 앞이 row 뒤가 column 하나만 쓰면 둘다 */
+            /* gap:20px; */
+
+            /* justify-items: center; 
+            align-items: center;  */
+            /* place-items: center; */
+            /* place-items: center start;  */
+            /* ~~items: item요소(자식 요소)가 존재할 수 있는 영역 내에서 정렬 */
+
+            /* justify-content: center;
+            align-content: center; */
+            /* place-content: center; */ 
+            /* ~~~-content: container 영역 내에서 부모 요소 자체를 통채로 정렬 */
+
+            grid-template-areas: 'header header header' 'nav main aside' 'footer footer footer';
+        }
+
+        .item{
+            /* width: 100px;
+            height: 100px; */
+        }
+
+        .red{
+            /* order: 1; */
+            grid-area: header;
+            background-color: red;
+            /* grid-column: 1/4;
+            /* grid-column: 1 / span 5; */
+            /* grid-column: auto/span 3; */ 
+            /* grid-column-start: 1;
+            grid-column-end: 4; */
+
+            /* place-self: center; */
+        }
+
+        .orange{
+            grid-area: nav;
+            /* order:2; */
+            background-color: orange;
+            /* grid-row: 2 / 4; */
+            /* place-self: center; */
+        }
+
+        .yellow{
+            grid-area: main;
+            background-color: yellow;
+            /* justify-self: center;
+            align-self: center; */
+            /* place-self: center; */
+
+        }
+
+        .green{
+            grid-area: aside;
+            background-color: green;
+        }
+
+        .blue{
+            grid-area:footer;
+            background-color: blue;
+        }
+
+        .navy{
+            background-color: navy;
+        }
+
+        .purple{
+            /* order:-1; */
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item red"></div>
+        <div class="item orange"></div>
+        <div class="item yellow"></div>
+        <div class="item green"></div>
+        <div class="item blue"></div>
+        <div class="item navy"></div>
+        <div class="item purple"></div>
+    </div>
+</body>
+</html>
