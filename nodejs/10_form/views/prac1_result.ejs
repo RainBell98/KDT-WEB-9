@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: violet;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <h1><%=title%></h1>
+    <div><span><%=userInfo.id%></span>님 환영합니다.</div>
+    <div>성별은 <span><%=userInfo.gender%></span>이군요!!!!!!!!</div>
+    <div>생년월일은 <span><%=userInfo.date%></span>이시고</div>
+    <div>전화번호는<span><%=userInfo.phone%></span>에</div>
+    <div>일어나는 시간은<span><%=userInfo.time%></span>이군요</div>
+    <br><br><br>
+    <a href="/">홈으로 이동</a>
+</body>
+</html>
