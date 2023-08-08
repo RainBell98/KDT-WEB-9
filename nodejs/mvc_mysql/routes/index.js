@@ -5,4 +5,5 @@ const controller = require('../controller/Cvisitor')
 router.get('/',controller.main)
 router.get('/visitor',controller.getVisitors)
 
+
 module.exports = router

@@ -1,17 +1,66 @@
 const mysql = require('mysql')
 
-const conn = mysql.createConnecton({
+//mysql 연결
+const conn = mysql.createConnection({
     host:'localhost',
-    user: 'user',
-    password: 'wooho9698@',
-    databse: 'kdt9'
+    user: 'news',
+    password: '1234',
+    database: 'kdt9',
+    // port:3306
+})
+conn.connect((err)=>{
+    if(err){
+        console.log('error')
+        return
+    }
+    console.log('connect')
 })
 
-exports.getVisitors = (cb)=>{
-    conn.query(`SELECT*FROM visitor`,(err,rows)=>{
+exports.getVisitors = (callback)=>{
+    const query = 'SELECT*FROM visitor'
+    conn.query(query,(err,rows)=>{
+        console.log(rows)
+        callback(rows)
+    })   
+}
+
+exports.getVisitor = (id, callback)=>{
+    const query = `select * from visitor where id=${id}`
+    conn.query(query,(err,rows)=>{
         if(err){
-            throw err
+            console.log(err)
+            return
         }
+        callback(rows)     
     })
-    console.log('MVisitor.js',rows)
+}
+
+exports.postVisitor = (data,callback)=>{
+    const query = `insert into visitor(name,comment) values ("${data.name}","${data.comment}")`
+    conn.query(query,(err,rows)=>{
+        console.log('rows',rows)
+        callback(rows)
+    })
+}
+
+exports.editVisitor = (data,callback)=>{
+    const query = `update visitor set name = '${data.name}', comment='${data.comment}' where id = '${data.id}'`
+    conn.query(query,(err,rows)=>{
+        if (err){
+            console.log(err)
+            return
+        }
+        callback()
+    })
+}
+
+exports.deleteVisitor = (data,callback) =>{
+    const query = `delete from visitor where id=${data.id}`
+    conn.query(query,(err,rows)=>{
+        if(err){
+            console.log(err)
+            return
+        }
+        callback()
+    })
 }

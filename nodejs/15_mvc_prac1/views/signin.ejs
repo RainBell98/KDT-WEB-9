@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <form name="register"> 
+        <fieldset>
+            <label for="name">아이디 입력</label>
+            <input type="text" name="name" id="name"><br>
+            <label for="pw">비밀번호 입력</label>
+            <input type="password" name="pw" id="pw">
+        </fieldset>
+        <button type="button" onclick="axiosPost()">로그인</button>
+    </form>
+    <form action="/profile" method="post" name="form-profile">
+        <input type="hidden" name="name" id ="name">
+    </form>
+    <script>
+        function axiosPost(){
+            const form = document.forms['register']
+            axios({
+                method:"POST",
+                url:"/user/signin",
+                data:{  
+                    userid: form.name.value,
+                    pw:form.pw.value
+                }
+            }).then((res)=>{
+                console.log(res)
+                if(res.data.result){
+                    alert("성공")
+                    const form2 = document.forms['form-profile']
+                    form2.name.value = form.name.value
+                    form2.submit()
+                }
+                else{
+                    alert("실패")
+                }
+            })
+        }
+    </script>
+</body>
+</html>

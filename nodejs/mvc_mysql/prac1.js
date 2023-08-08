@@ -15,7 +15,7 @@ app.use(express.json())
 //ex)
 //const userRouter = require('./rotes/user)
 //app.use('/user',userRouter)
-const visitorRouter = require('./routes/visitor')
+const prac1Router = require('./routes/prac1')
 
 app.get('/',(req,res)=>{
     res.render('index')
