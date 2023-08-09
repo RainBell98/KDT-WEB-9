@@ -8,9 +8,10 @@
 </head>
 <body>
     <form name="signup">
-        <input type="text" id="userid" placeholder="id입력">
-        <input type="text" id="name" placeholder="이름 입력">
-        <input type="password" id="pw" placeholder="비밀번호 입력">
+        <h3>회원가입</h3>
+        <input type="text" id="userid" placeholder="id입력"><br>
+        <input type="text" id="name" placeholder="이름 입력"><br>
+        <input type="password" id="pw" placeholder="비밀번호 입력"><br>
         <button type="button" onclick="registerSuccess()">회원가입</button>
     </form>
     <script>
@@ -26,7 +27,7 @@
                 }
             }).then((res)=>{
                 console.log('res',res)
-                location.replace('/signin')
+                location.replace('/user/signin')
             })
         }
     </script>
