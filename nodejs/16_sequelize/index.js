@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 8000
-
+const db = require('./models/index')
 
 
 app.set('view engine','ejs')
@@ -29,6 +29,9 @@ app.use('*',(req,res)=>{
     res.render('404')
 })
 
-app.listen(port,()=>{
-    console.log(`http://localhost:${port}`)
+
+db.sequelize.sync({force:false}).then(()=>{
+    app.listen(port,()=>{
+        console.log(`http://localhost:${port}`)
+    })
 })
