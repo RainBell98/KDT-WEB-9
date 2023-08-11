@@ -9,15 +9,19 @@ const studentModel = (sequelize) =>{
             primaryKey:true,
             autoIncrement:true
         },
-        name:{
-            type:DataTypes.STRING(15),
-            allowNull:false,
-        },
-        major:{
+        userid:{
             type:DataTypes.STRING(31),
+            allowNull:false,
+            
+        },
+        password:{
+            type:DataTypes.STRING(255),
             allowNull:false
+        },
+        email:{
+            type:DataTypes.STRING(63),
+            
         }
-
     })
     return Student
 }
