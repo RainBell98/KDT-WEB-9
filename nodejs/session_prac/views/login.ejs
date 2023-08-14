@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>로그인</h1>
+    <form action="/login" method="post" name="login">
+        <input type="text" name="id" id=""><br>
+        <input type="password" name="pw" id="">
+        <button type="submit" onclick="axiosPost()">로그인</button>
+
+    </form>
+    <script>
+        const form = document.forms['login']
+        function axiosPost(){
+            axios({
+                method:'GET',
+                url:'/login',
+                data:{
+                    id: form.id.value,
+                    pw: form.pw.value
+                }
+            }).then((res)=>{
+                console.log(res.token[1])
+                window.localStorage.setItem(res.token)
+                window.location.reload()
+            })
+        }
+        
+    </script>
+</body>
+</html>
