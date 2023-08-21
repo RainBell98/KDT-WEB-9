@@ -59,7 +59,7 @@
            formData.append('title', title)
            formData.append('dynamic',file.files[0])
 
-            const res = await axios({
+           const res = await axios({
                 method:'POST',
                 url:'/dynamic',
                 data:formData,

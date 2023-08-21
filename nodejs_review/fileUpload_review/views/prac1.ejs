@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>동적 파일 업로드</h1>
+    
+    <input type="file" id="dynamic" name="dynamicUser" multiple><br>
+    <input type="text" id="title"><br>
+    <button type="button" onclick="fileupload()">업로드</button>
+    
+    <br>
+    <div class="result"></div>
+    <div class="result"></div>
+    <div class="result"></div>
+
+
+    <script>
+        
+        const resultBox = document.querySelectorAll('.result')
+        async function fileupload(){
+            console.log("file")
+            const formData = new FormData()
+            const file = document.getElementById('dynamic')
+            console.log(file.files)
+
+            for(let i = 0;i<file.files.length;i++){
+                console.log(file.files[i])
+                console.log(i)
+                formData.append('dynamicUser',file.files[i])
+            }
+            
+            const res = await axios({
+                method:'POST',
+                url:'/prac1',
+                data:formData,
+                headers:{
+                    'Content-Type': 'multipart/form-data'
+                }
+            })
+            
+            for(let j = 0;j<file.files.length;j++){
+                console.log(j,res.data[j])
+                resultBox[j].innerHTML = `<img src = ${res.data[j].path}>`
+            }
+            
+        }
+    </script>
+</body>
+</html>
