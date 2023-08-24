@@ -1,4 +1,5 @@
 const express = require('express')
+require('dotenv').config()
 // const crypto = require('crypto')
 const app = express()
 const port = 8000
@@ -9,7 +10,7 @@ let hash = ''
 // const key = 64 // 생성할 키의 길이
 // const algo = 'sha512'
 // let result = false
-
+app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended : true}))
 app.use(express.json())
 
@@ -37,6 +38,8 @@ app.use(express.json())
 // })
 
 app.get('/',(req,res)=>{
+    console.log(process.env.NAME)
+    console.log(process.env.NODE_ENV)
     res.render('index')
 })
 

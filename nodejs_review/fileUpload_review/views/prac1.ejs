@@ -10,18 +10,15 @@
     <h1>동적 파일 업로드</h1>
     
     <input type="file" id="dynamic" name="dynamicUser" multiple><br>
-    <input type="text" id="title"><br>
     <button type="button" onclick="fileupload()">업로드</button>
     
     <br>
+    
     <div class="result"></div>
-    <div class="result"></div>
-    <div class="result"></div>
-
 
     <script>
         
-        const resultBox = document.querySelectorAll('.result')
+        const resultBox = document.querySelector('.result')
         async function fileupload(){
             console.log("file")
             const formData = new FormData()
@@ -42,11 +39,22 @@
                     'Content-Type': 'multipart/form-data'
                 }
             })
-            
-            for(let j = 0;j<file.files.length;j++){
-                console.log(j,res.data[j])
-                resultBox[j].innerHTML = `<img src = ${res.data[j].path}>`
+            if (res.data.result){
+                for(let j = 0;j<file.files.length;j++){
+                // console.log(j,res.data[j])
+                // resultBox[j].innerHTML = `<img src = ${res.data[j].path}>`
+                const img = document.createElement('img');
+                img.src = res.data.file[j].path;
+                img.style.width = "500px"
+                resultBox.appendChild(img)
+
+                }
             }
+            else{
+                alert("업로드는 최대 3장입니다.")
+                window.location.reload()
+            }
+            
             
         }
     </script>

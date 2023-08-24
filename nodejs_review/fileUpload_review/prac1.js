@@ -39,9 +39,15 @@ const limits ={
 //key-value에서 key값과 value의 변수가 동일하면 합칠 수 있음
 const upload = multer({storage, limits})
 
-app.post('/prac1',upload.array('dynamicUser',3),(req,res)=>{
-    console.log(req.files)
-    res.send(req.files)
+app.post('/prac1',upload.array('dynamicUser'),(req,res)=>{
+    if(req.files.length > 3){
+        res.send({result:false})
+    }
+    else{
+        console.log(req.files.length)
+        res.send({file:req.files,result:true})
+    }
+    
 })
 
 app.get('/',(req,res)=>{

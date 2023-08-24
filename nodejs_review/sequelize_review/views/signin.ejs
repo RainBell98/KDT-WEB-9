@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>로그인</h1>
+        <form onsubmit="login(event)">
+            <input type="text" id="userid" placeholder="ID" /><br />
+            <input type="password" id="pw" placeholder="PW" /><br />
+            <button type="submit">로그인</button>
+        </form>
+
+        <script>
+            async function login(event) {
+                event.preventDefault(); //기본 제출 멈춤
+                try {
+                    const res = await axios({
+                        method: 'POST',
+                        url: '/signin',
+                        data: {
+                            userid: document.querySelector('#userid').value,
+                            pw: document.querySelector('#pw').value,
+                        },
+                    });
+                    if(res.data.resu){
+                        if (res.data.ans) {
+                            alert(`${res.data.data.name}님 로그인`);
+                            document.location.href = `/profile/${res.data.data.id}`;
+                        } else {
+                            alert('비밀번호가 다릅니다.');
+                            document.location.reload();
+                        }
+                    }else{
+                        alert("아이디가 다릅니다.")
+                    }
+                    
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        </script>
+    </body>
+</html>
