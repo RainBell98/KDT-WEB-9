@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1><%= data.name%>님 프로필 정보</h1>
+    <form name="edit">
+        <input type="text" id="userid" value="<%= data.userid%>" readonly><br>
+        <input type="text" name="" id="name" value="<%= data.name%>"><br>
+        <input type="password" name="" id="pw" value="<%= data.pw%>"><br>
+        <input type="hidden" name="" id="id" value="<%= data.id%>">
+        <button type="button" onclick="edit_p()">수정</button>
+    </form>
+    <script>
+        const form = document.forms['edit']
+        async function edit_p(){
+            try {
+                const res = await axios({
+                    method: "PATCH",
+                    url:"/profile/edit",
+                    data:{
+                        id: form.id.value,
+                        userid: form.userid.value,
+                        pw: form.pw.value,
+                        name: form.name.value
+                    }
+                })
+                if(res.data.result){
+                    alert('수정 완료')
+                    document.location.reload()
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    </script>
+</body>
+</html>
