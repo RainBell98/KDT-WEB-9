@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    
+    <button id = "hello">hello</button>
+    <button id="study">study</button>
+    <button id="bye">bye</button>
+    <div></div>
+
+    <script>
+        const socket = io()
+        const div = document.querySelector("div")
+
+        socket.emit('open_msg', { name: 'client', message: 'Hello Server' }, (res) => {
+                console.log(res);
+        });
+
+        socket.on('backend_msg', (arg) => {
+            div.innerHTML = `${arg.name} : ${arg.msg}`
+        });
+
+        // chatForm.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+
+        //     // user와 message 내용 가지고 오기
+        //     const user = chatForm.querySelector('#user');
+        //     const msg = chatForm.querySelector('#message');
+
+        //     // form_message 이벤트 생성
+        //     socket.emit('form_msg', { name: user.value, msg: msg.value });
+        //     // frontend에서 값을 사용하기 위해서 frontend에서 사용하기 위해서 backend에서 새로운 이벤트를 생성 후 받아오는 방법과
+        //     // callback을 사용하는 방법이 있다. (확장성이 떨어진다)
+
+        //     // 채팅 버튼 클릭 시 값 비워주기
+        //     user.value = '';
+        //     msg.value = '';
+        // });
+
+        const h = document.querySelector("#hello")
+        const s = document.querySelector("#study")
+        const b = document.querySelector("#bye")
+
+        h.addEventListener('click',(e)=>{
+            e.preventDefault();
+            socket.emit('form_msg', { name: "hello", msg: "안녕하세요" });
+        })
+
+        s.addEventListener('click',(e)=>{
+            e.preventDefault();
+            socket.emit('form_msg', { name: "study", msg: "공부합시다" });
+        })
+
+        b.addEventListener('click',(e)=>{
+            e.preventDefault();
+            socket.emit('form_msg', { name: "bye", msg: "안녕~" });
+        })
+
+
+    </script>
+</body>
+</html>
