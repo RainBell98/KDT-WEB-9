@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+    <style>
+      #body {
+        width: 100%;
+        height: 70vh;
+        position: relative;
+        background: skyblue;
+      }
+
+      #chat {
+        position: absolute;
+        bottom: 0em;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      #message {
+        width: 80%;
+      }
+
+      .my-chat {
+        display: flex;
+        justify-content: end;
+        padding: 2px 0px;
+      }
+
+      .my-chat p {
+        margin: 0;
+        padding: 10px;
+        background: yellow;
+        border-radius: 10px;
+        margin-right: 10px;
+      }
+
+      .other-chat {
+        display: flex;
+        justify-content: start;
+        padding: 2px 0px;
+      }
+
+      .other-chat p {
+        margin: 0;
+        padding: 10px;
+        background: white;
+        border-radius: 10px;
+        margin-left: 10px;
+      }
+
+      #enter {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="body">
+      <div id="msg">
+        <div class="my-chat">
+          <!-- <p>채팅테스트(나)</p> -->
+        </div>
+        <div class="other-chat">
+          <!-- <p>채팅테스트(상대)</p> -->
+        </div>
+      </div>
+      <form id="chat">
+        <select id="userList"></select>
+        <input type="text" id="message" placeholder="메세지 입력" />
+        <button>입력</button>
+      </form>
+    </div>
+
+    <script>
+      const socket = io();
+      const roomForm = document.querySelector('#room');
+      const chatForm = document.querySelector('#chat');
+      const msg = document.querySelector('#msg');
+
+      let myName;
+
+      socket.on('create', (res) => {
+        const p = document.createElement('p');
+        const div = document.querySelector('#msg');
+        const body = document.querySelector('#body');
+        p.id = 'enter';
+        p.textContent = res;
+        div.appendChild(p);
+        body.appendChild(div);
+      });
+
+      //룸리스트
+      socket.on('roomList', (roomLists) => {
+        console.log(roomLists);
+        const lists = document.querySelector('#lists');
+        lists.textContent = '';
+        roomLists.forEach((roomList) => {
+          const li = document.createElement('li');
+          li.textContent = `${roomList} 와 닉네임 입력 후 입장`;
+          lists.appendChild(li);
+        });
+      });
+
+      //사용자 리스트
+      socket.on('userList', (userLists) => {
+        console.log(userLists);
+        const lists = document.querySelector('#userList');
+        lists.textContent = '';
+        let options = `<option value="all">전체</option>`;
+        for (let key in userLists) {
+          options += `<option value="${userLists[key]}">${userLists[key]}</option>`;
+        }
+        lists.innerHTML = options;
+      });
+      //메세지 띄우기
+      socket.on('newMessage', (message, nick, private) => {
+        console.log(message);
+        const div = document.createElement('div');
+        const p = document.createElement('p');
+        if (nick != myName) {
+          div.classList.add('other-chat');
+        } else {
+          div.classList.add('my-chat');
+        }
+        console.log('asdf', private);
+        if (private != 'secret') {
+          p.textContent = `${nick}: ${message}`;
+        } else {
+          p.style.background = 'pink';
+          p.textContent = `(속닥속닥) ${nick}: ${message}`;
+        }
+        div.appendChild(p);
+        msg.appendChild(div);
+      });
+
+      ///폼 이벤트
+
+      chatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const user = document.querySelector('#userList');
+        const message = document.querySelector('#message');
+
+        console.log(user.value);
+        const msg = {
+          nick: myName,
+          user: user.value,
+          message: message.value,
+        };
+        console.log('유저', user);
+        socket.emit('sendMessage', msg);
+        message.value = '';
+      });
+    </script>
+  </body>
+</html>
