@@ -67,9 +67,15 @@ io.on('connection', (socket) => {
     io.to(socket.room).emit('newMessage', message.message, message.nick, message.user);
   });
 
-  socket.on('disconnect', () => {
+  socket.on('leave', () => {
+    console.log('so', socket.room);
+    const roomInfo = io.sockets.adapter.rooms.get(socket.room)?.size;
+    console.log('Info', roomInfo);
     if (socket.room) {
       socket.leave(socket.room);
+      socket.broadcast.to(socket.room).emit('create', `${socket.user}님이 나갔습니다.`);
+      const roomInfo = io.sockets.adapter.rooms.get(socket.room)?.size;
+      console.log('Info', roomInfo);
     }
   });
 });
