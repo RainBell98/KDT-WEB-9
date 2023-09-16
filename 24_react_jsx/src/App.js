@@ -81,50 +81,50 @@ function App() {
   // //&&연산자
   // const result = true && 'Hello';
   // console.log(result);
-  //||연산자
-  // const defaultValue = 1000;
-  // const price = 1500;
-  // const dbPrice = price || defaultValue;
-  // console.log(dbPrice);
+  //  ||연산자
+  const defaultValue = 1000;
+  const price = 1500;
+  const dbPrice = price || defaultValue;
+  console.log(dbPrice);
 
-  // return (
-  //   <>
-  //     {lists.map((value, index) => {
-  //       return (
-  //         <div key={index}>
-  //           <p>Hello {value}</p>
-  //         </div>
-  //       );
-  //     })}
-  //   </>
-  // );
-  const users = [
-    { id: 1, name: 'John', age: 25, vip: true },
-    { id: 2, name: 'Jane', age: 19, vip: false },
-    { id: 3, name: 'Alice', age: 30, vip: true },
-    { id: 4, name: 'Bob', age: 18, vip: false },
-    { id: 5, name: 'Charlie', age: 35, vip: true },
-  ];
-  const user = users.filter((value) => {
-    return value.vip;
-  });
+  return (
+    <>
+      {lists.map((value, index) => {
+        return (
+          <div key={index}>
+            <p>Hello {value}</p>
+          </div>
+        );
+      })}
+    </>
+  );
+  // const users = [
+  //   { id: 1, name: 'John', age: 25, vip: true },
+  //   { id: 2, name: 'Jane', age: 19, vip: false },
+  //   { id: 3, name: 'Alice', age: 30, vip: true },
+  //   { id: 4, name: 'Bob', age: 18, vip: false },
+  //   { id: 5, name: 'Charlie', age: 35, vip: true },
+  // ];
+  // const user = users.filter((value) => {
+  //   return value.vip;
+  // });
 
-  const res = true && result();
-  function result() {
-    return (
-      <>
-        {user.map((value) => {
-          return (
-            <div key={value.id}>
-              <p>- {value.name}</p>
-            </div>
-          );
-        })}
-      </>
-    );
-  }
-  console.log(res);
-  return <>{res}</>;
+  // const res = true && result();
+  // function result() {
+  //   return (
+  //     <>
+  //       {user.map((value) => {
+  //         return (
+  //           <div key={value.id}>
+  //             <p>- {value.name}</p>
+  //           </div>
+  //         );
+  //       })}
+  //     </>
+  //   );
+  // }
+  // console.log(res);
+  // return <>{res}</>;
 }
 
 export default App;
