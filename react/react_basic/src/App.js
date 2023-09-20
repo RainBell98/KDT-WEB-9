@@ -13,6 +13,7 @@ import Counter from './Counter';
 import StatePrac1 from './StatePrac1';
 import StatePrac2 from './StatePrac2';
 import StatePrac3 from './StatePrac3';
+import CounterFunc from './CounterFunc';
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
       {/* <Counter></Counter> */}
       {/* <StatePrac1></StatePrac1> */}
       {/* <StatePrac2></StatePrac2> */}
-      <StatePrac3></StatePrac3>
+      {/* <StatePrac3></StatePrac3> */}
+      <CounterFunc></CounterFunc>
     </>
   );
 }
