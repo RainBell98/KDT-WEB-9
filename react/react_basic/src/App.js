@@ -6,6 +6,13 @@ import FunctionComponent from './FunctionComponent';
 import Test from './Test';
 import Test2 from './Test2';
 import Info from './Info';
+import Event from './Event';
+import EventClass from './EventClass';
+import Prac2 from './Prac2';
+import Counter from './Counter';
+import StatePrac1 from './StatePrac1';
+import StatePrac2 from './StatePrac2';
+import StatePrac3 from './StatePrac3';
 
 function App() {
   return (
@@ -18,7 +25,14 @@ function App() {
       <FunctionComponent></FunctionComponent> */}
       {/* <Food food="고기"></Food>
       <Food></Food> */}
-      <Info title={'나의 하루는 4시 40분에 시작된다'} author={'김유진'} price={'13,500원'} type={'자기계발서'}></Info>
+      {/* <Info title={'나의 하루는 4시 40분에 시작된다'} author={'김유진'} price={'13,500원'} type={'자기계발서'}></Info> */}
+      {/* <Event> </Event>
+      <EventClass></EventClass> */}
+      {/* <Prac2 message={'Hello'}></Prac2> */}
+      {/* <Counter></Counter> */}
+      {/* <StatePrac1></StatePrac1> */}
+      {/* <StatePrac2></StatePrac2> */}
+      <StatePrac3></StatePrac3>
     </>
   );
 }
