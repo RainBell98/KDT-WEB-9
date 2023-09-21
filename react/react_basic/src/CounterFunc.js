@@ -7,7 +7,7 @@ export default function CounterFunc() {
     setNumber(number + 1);
   };
   const handleDecrement = () => {
-    setNumber(number / 1000000000);
+    setNumber(number * 1022200000000);
   };
   return (
     <div>

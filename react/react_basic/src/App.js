@@ -14,6 +14,11 @@ import StatePrac1 from './StatePrac1';
 import StatePrac2 from './StatePrac2';
 import StatePrac3 from './StatePrac3';
 import CounterFunc from './CounterFunc';
+import { ToggleFunc } from './ToggleFunc';
+import { UseStatePrac1 } from './UseStatePrac1';
+import { UseStatePrac2 } from './UseStatePrac2';
+import { UseStatePrac3 } from './UseStatePrac3';
+import { UseStatePrac5 } from './UseStatePrac5';
 
 function App() {
   return (
@@ -34,7 +39,12 @@ function App() {
       {/* <StatePrac1></StatePrac1> */}
       {/* <StatePrac2></StatePrac2> */}
       {/* <StatePrac3></StatePrac3> */}
-      <CounterFunc></CounterFunc>
+      {/* <CounterFunc></CounterFunc> */}
+      {/* <ToggleFunc></ToggleFunc> */}
+      {/* <UseStatePrac1></UseStatePrac1> */}
+      {/* <UseStatePrac2></UseStatePrac2> */}
+      {/* <UseStatePrac3></UseStatePrac3> */}
+      {/* <UseStatePrac5></UseStatePrac5> */}
     </>
   );
 }
