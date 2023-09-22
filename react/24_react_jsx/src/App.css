@@ -1,0 +1,95 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.test {
+  background-color: bisque;
+  color: rgb(230, 168, 54);
+  font-size: larger;
+  margin: 0px 50px;
+  text-align: center;
+}
+.input {
+  margin-top: 50px;
+  /* display: flex; */
+  text-align: center;
+}
+
+.ss {
+  margin-left: 40px;
+}
+
+.prac4 {
+  display: flex;
+}
+
+.red {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+}
+.orange {
+  background-color: orange;
+  width: 50px;
+  height: 70px;
+}
+.yellow {
+  background-color: yellow;
+  width: 50px;
+  height: 90px;
+}
+.green {
+  background-color: green;
+  width: 50px;
+  height: 110px;
+}
+.blue {
+  background-color: blue;
+  width: 50px;
+  height: 130px;
+}
+.navy {
+  background-color: navy;
+  width: 50px;
+  height: 150px;
+}
+.purple {
+  background-color: purple;
+  width: 50px;
+  height: 170px;
+}

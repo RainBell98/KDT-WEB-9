@@ -19,6 +19,7 @@ import { UseStatePrac1 } from './UseStatePrac1';
 import { UseStatePrac2 } from './UseStatePrac2';
 import { UseStatePrac3 } from './UseStatePrac3';
 import { Pracice5, UseStatePrac5 } from './UseStatePrac5';
+import LifeCycleClass from './LifeCycleClass';
 
 function App() {
   return (
@@ -45,7 +46,8 @@ function App() {
       {/* <UseStatePrac2></UseStatePrac2> */}
       {/* <UseStatePrac3></UseStatePrac3> */}
       {/* <UseStatePrac5></UseStatePrac5> */}
-      <Pracice5></Pracice5>
+      {/* <Pracice5></Pracice5> */}
+      <LifeCycleClass></LifeCycleClass>
     </>
   );
 }
