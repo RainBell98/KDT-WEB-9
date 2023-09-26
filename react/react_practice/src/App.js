@@ -1,3 +1,4 @@
+// import { Larva } from './03Comp/Larva';
 import PropsPrac1 from './04Props/PropsPrac1';
 import PropsPrac2 from './04Props/PropsPrac2';
 import Message from './05Event/Message';
@@ -12,6 +13,11 @@ import UseStatePrac4 from './07UseState/UseStatePrac4';
 import UseStatePrac5 from './07UseState/UseStatePrac5';
 import { Prac1 } from './08UseEffect/Prac1';
 import { Prac2 } from './08UseEffect/Prac2';
+import RefSampleClass1 from './09Ref/RefSampleClass1';
+import SignupForm from './10Hook/useReducerPrac';
+import { PracScss1 } from './Style/prac1';
+import { PracStyle2 } from './Style/pracStyle2';
+import { PracStyle3 } from './Style/pracStyle3';
 
 function App() {
   return (
@@ -28,18 +34,24 @@ function App() {
       {/* 이벤트 핸들링 실습 */}
       {/* <Message message={"Hello React"} /> */}
       {/* state 실습 */}
-      {/* <StatePrac1 />
-            <StatePrac2 />
-            <StatePrac3 />
-            <StatePrac4 /> */}
+      {/* <StatePrac1 /> */}
+      {/* <StatePrac2 /> */}
+      {/* <StatePrac3 /> */}
+      {/* <StatePrac4 /> */}
       {/* useState 실습 */}
       {/* <UseStatePrac1 />
-            <UseStatePrac2 />
-            <UseStatePrac3 />
-            <UseStatePrac4 />
+            <UseStatePrac2 /> */}
+      {/* <UseStatePrac3 /> */}
+      {/* <UseStatePrac4 />
             <UseStatePrac5 /> */}
       {/* <Prac1></Prac1> */}
-      <Prac2></Prac2>
+      {/* <Prac2></Prac2> */}
+      {/* <RefSampleClass1></RefSampleClass1> */}
+      {/* <SignupForm></SignupForm> */}
+      {/* <Larva></Larva> */}
+      {/* <PracScss1></PracScss1> */}
+      {/* <PracStyle2></PracStyle2> */}
+      <PracStyle3></PracStyle3>
     </>
   );
 }

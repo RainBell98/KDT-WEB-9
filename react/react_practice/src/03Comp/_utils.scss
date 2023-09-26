@@ -1,0 +1,7 @@
+$eye-white: white;
+$eye-black: black;
+
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
