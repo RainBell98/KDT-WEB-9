@@ -1,11 +1,18 @@
-import { LifeCycleFunc } from './08Lifecycle/LifeCycleFunc';
-import RefSampleClass1 from './09Ref/RefSampleClass1';
-import RefSampleClass2 from './09Ref/RefSampleClass2';
-import { RefSampleFunc1 } from './09Ref/RefSampleFunc1';
-import { RefSampleFunc2 } from './09Ref/RefSampleFunc2';
-import { UseCallback } from './10Hook/useCallback';
-import { UseMemo } from './10Hook/useMemo';
-import { Counter } from './10Hook/useReducer';
+// import { LifeCycleFunc } from './08Lifecycle/LifeCycleFunc';
+// import RefSampleClass1 from './09Ref/RefSampleClass1';
+// import RefSampleClass2 from './09Ref/RefSampleClass2';
+// import { RefSampleFunc1 } from './09Ref/RefSampleFunc1';
+// import { RefSampleFunc2 } from './09Ref/RefSampleFunc2';
+// import { UseCallback } from './10Hook/useCallback';
+// import { UseMemo } from './10Hook/useMemo';
+// import { Counter } from './10Hook/useReducer';
+// import { SassComponent } from './11Style/SassComponent';
+// import { Style } from './11Style/Style';
+// import { StyledComponent } from './11Style/StyledComponent';
+import { Outlet } from 'react-router-dom';
+import { Header } from './12Router/Header';
+// import { Root } from './12Router/Root';
+// import { Router } from './12Router/Router';
 
 function App() {
   return (
@@ -17,7 +24,13 @@ function App() {
       <RefSampleFunc2></RefSampleFunc2> */}
       {/* <UseMemo></UseMemo> */}
       {/* <UseCallback></UseCallback> */}
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
+      {/* <Style></Style> */}
+      {/* <SassComponent></SassComponent> */}
+      {/* <StyledComponent></StyledComponent> */}
+      {/* <Router></Router> ver1*/}
+      <Header />
+      <Outlet />
     </>
   );
 }

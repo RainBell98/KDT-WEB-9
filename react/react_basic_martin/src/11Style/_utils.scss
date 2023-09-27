@@ -1,0 +1,16 @@
+//_utils.scss
+//scss파일명 앞에 _를 붙여서 생성하면 파일 단위로 분리되어 컴파일 되지 않는다.
+$color-red: #ff0000;
+$color-orange: orange;
+$color-yellow: yellow;
+$color-green: green;
+$color-blue: blue;
+$color-navy: navy;
+$color-purple: purple;
+
+@mixin box($size) {
+  //   @keyframes #{$name} {
+  //   }
+  width: $size;
+  height: $size;
+}

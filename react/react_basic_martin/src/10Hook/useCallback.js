@@ -1,10 +1,10 @@
 import { useCallback, useState } from 'react';
 
-const ChildComponent = ({ onclick }) => {
-  console.log('Child');
+const ChildComponent = ({ onClick }) => {
+  // console.log('Child');
   return (
     <>
-      <button onClick={onclick}>PLUS</button>
+      <button onClick={onClick}>PLUS</button>
     </>
   );
 };
@@ -15,17 +15,24 @@ export const UseCallback = () => {
 
   //useCallback 미사용
   const plusCount = () => {
-    setCount(() => count + 1);
+    console.log('plusCount', count);
+    setCount((prev) => prev + 1);
   };
 
   //useCallback 사용
+  //반복해서 생성되는 이벤트 핸들러 함수를 useCallback으로 감싸줘서 함수를 메모이제이션
   const plusCountCallback = useCallback(() => {
-    setCount(() => count + 1);
-  }, [count]);
+    console.log('call', count);
+    setCount((prev) => prev + 1);
+  }, []);
+  const onChange = (e) => {
+    setInputValue(e.target.value);
+    plusCount();
+  };
 
   return (
     <>
-      <input value={inputValue} onChange={(e) => setInputValue(e.target.value)}></input>
+      <input value={inputValue} onChange={(e) => onChange(e)}></input>
       <ChildComponent onClick={plusCountCallback}></ChildComponent>
       <p>{count}</p>
     </>
