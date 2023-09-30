@@ -27,12 +27,25 @@ const get_todo = (req, res) => {
 };
 const post_todo = (req, res) => {
   models.Todo.create({
-    id: req.body.id,
     title: req.body.title,
     done: req.body.done,
   });
 };
-const patch_todo = (req, res) => {};
-const delete_todo = (req, res) => {};
+const patch_todo = (req, res) => {
+  console.log(req.params);
+  models.Todo.update(
+    {
+      title: req.body.title,
+    },
+    {
+      where: { id: req.params.todoId },
+    }
+  );
+};
+const delete_todo = (req, res) => {
+  models.Todo.destroy({
+    where: { id: req.params.todoId },
+  });
+};
 
 module.exports = { get_todo, post_todo, patch_todo, delete_todo };

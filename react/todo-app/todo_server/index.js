@@ -6,6 +6,7 @@ const db = require('./models/index');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+require('dotenv').config();
 
 //CORS오류방지
 app.use(cors());
@@ -19,7 +20,7 @@ app.use('*', (req, res) => {
   res.status(404).render('404');
 });
 
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
   app.listen(port, () => {
     console.log(`http://localhost:${port}`);
   });

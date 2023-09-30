@@ -6,4 +6,4 @@ const development = {
   dialect: 'mysql',
 };
 
-modules.exports = development;
+module.exports = { development };
