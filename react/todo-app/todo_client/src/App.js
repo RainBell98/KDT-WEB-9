@@ -81,14 +81,12 @@ function App() {
   const handle = (e, id, title) => {
     console.log(e);
     if (e.key == 'Enter') {
-      console.log('enter');
       patchTodo(id, title);
     }
   };
 
   const patchTodo = async (id, title) => {
     try {
-      console.log(id, title);
       const res = await axios({
         method: 'PATCH',
         url: '/todo',
@@ -125,7 +123,6 @@ function App() {
                   onChange={(e) => {
                     // setInputTodo(e.target.value);
                     handle(e, value.id, value.title);
-                    console.log(e.target.value);
                   }}
                   onKeyDown={(e) => handle(e, value.id, e.target.value)}
                   placeholder={value.title}

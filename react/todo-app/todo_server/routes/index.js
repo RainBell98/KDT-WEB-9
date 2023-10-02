@@ -1,10 +1,11 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const controller = require("../controller/Cmain");
+const controller = require('../controller/Cmain');
 
-router.get("/todos", controller.get_todo);
-router.post("/todo", controller.post_todo);
-router.patch("/todo/:todoId", controller.patch_todo);
-router.delete("/todo/:todoId", controller.delete_todo);
+router.get('/todos', controller.get_todo);
+router.post('/todo', controller.post_todo);
+router.patch('/todo', controller.patch_todo);
+router.patch('/todos', controller.patch_done);
+router.delete('/todo', controller.delete_todo);
 
 module.exports = router;

@@ -11,6 +11,8 @@ require('dotenv').config();
 //CORS오류방지
 app.use(cors());
 
+app.use(express.urlencoded({ extended: true }));
+
 //router 분리
 const router = require('./routes');
 app.use('/', router);
