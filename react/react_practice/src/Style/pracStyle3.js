@@ -33,8 +33,8 @@ export const PracStyle3 = () => {
       <_Input type="text" value={inputTodo} onChange={(e) => setInputTodo(e.target.value)}></_Input>
       <_Btn onClick={addTodo}>Add</_Btn>
       <_Ul>
-        {todos.map((todo) => {
-          return <_Li key={todo.id}>{todo.text}</_Li>;
+        {todos.map((todo, id) => {
+          return <_Li key={id}>{todo.text}</_Li>;
         })}
       </_Ul>
     </>

@@ -9,8 +9,12 @@
 // import { SassComponent } from './11Style/SassComponent';
 // import { Style } from './11Style/Style';
 // import { StyledComponent } from './11Style/StyledComponent';
-import { Outlet } from 'react-router-dom';
-import { Header } from './12Router/Header';
+// import { Outlet } from 'react-router-dom';
+// import { Header } from './12Router/Header';
+// import { Form } from './13Form/Form';
+import { useState } from 'react';
+import { LanguageProvider } from './14Context/store/lang-context';
+import { LanguageSelector } from './14Context/LangSelector';
 // import { Root } from './12Router/Root';
 // import { Router } from './12Router/Router';
 
@@ -29,8 +33,11 @@ function App() {
       {/* <SassComponent></SassComponent> */}
       {/* <StyledComponent></StyledComponent> */}
       {/* <Router></Router> ver1*/}
-      <Header />
-      <Outlet />
+      {/* <Header />
+      <Outlet /> */}
+      <LanguageProvider>
+        <LanguageSelector />
+      </LanguageProvider>
     </>
   );
 }

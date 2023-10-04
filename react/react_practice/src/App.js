@@ -15,9 +15,16 @@ import { Prac1 } from './08UseEffect/Prac1';
 import { Prac2 } from './08UseEffect/Prac2';
 import RefSampleClass1 from './09Ref/RefSampleClass1';
 import SignupForm from './10Hook/useReducerPrac';
+import { FormPrac1 } from './13Form/FormPrac1';
+import { ContextPrac1, ContextPrac1_2 } from './14Context/ContextPrac1';
+import { CartProvider } from './14Context/store/CartList';
+import { UserProvider, UserProvider1 } from './14Context/store/ContextPrac1S';
+import { ProductProvider } from './14Context/store/ProductList';
 import { PracScss1 } from './Style/prac1';
 import { PracStyle2 } from './Style/pracStyle2';
 import { PracStyle3 } from './Style/pracStyle3';
+
+import { Cart } from './14Context/Cart';
 
 function App() {
   return (
@@ -51,7 +58,18 @@ function App() {
       {/* <Larva></Larva> */}
       {/* <PracScss1></PracScss1> */}
       {/* <PracStyle2></PracStyle2> */}
-      <PracStyle3></PracStyle3>
+      {/* <PracStyle3></PracStyle3> */}
+      {/* <UseStatePrac5></UseStatePrac5> */}
+      {/* <FormPrac1></FormPrac1> */}
+      {/* <UserProvider>
+        <ContextPrac1></ContextPrac1>
+      </UserProvider>
+      <UserProvider1>
+        <ContextPrac1_2></ContextPrac1_2>
+      </UserProvider1> */}
+      <ProductProvider>
+        <Cart></Cart>
+      </ProductProvider>
     </>
   );
 }
