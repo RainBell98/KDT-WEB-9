@@ -1,59 +1,76 @@
-//////////리덕스를 이용한 숫자증가, 감소코드
-import { createStore } from 'redux';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import { Provider } from 'react-redux';
+import store from './store';
+// import { store } from 'redux';
 
-const add = document.querySelector('#add');
-const del = document.querySelector('#DEL');
-const to = document.querySelector('#to');
-const todoList = document.querySelector('#todo');
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const ADD = 'ADD';
-const DEL = 'DEL';
-let todo = [];
-const todoReducer = (state, action) => {
-  console.log(state);
-  console.log(action.type);
-  switch (action.type) {
-    case ADD:
-      console.log(state);
-      return [to.value, action.valueType];
-    case DEL:
-      return [to.value, action.valueType, action.id];
-    default:
-      break;
-  }
-};
-const todoStore = createStore(todoReducer);
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+);
 
-todoStore.subscribe(() => {
-  const h = document.createElement('li');
-  const btn = document.createElement('button');
-  h.textContent = todoStore.getState()[0];
-  btn.textContent = '제거';
-  btn.id = Date.now();
-  if (todoStore.getState()[1] == 'add') {
-    btn.onclick = (e) => {
-      todoStore.dispatch({ type: DEL, id: e.target.id, valueType: 'del' });
-    };
-    h.appendChild(btn);
-    todoList.appendChild(h);
-  } else {
-    for (let i = 0; i < todoList.children.length; i++) {
-      if (todoStore.getState()[2] === todoList.children[i].children[0].id) {
-        todoList.children[i].remove();
-      }
-    }
-  }
-  //getState()는 저장소에서 최신 상태의 값을 반환할때 쓰는 메소드
-  // todo.appendChild(todoList.innerText);
-  console.log(todoList);
+// //////////리덕스를 이용한 숫자증가, 감소코드
+// import { createStore } from 'redux';
 
-  console.log('a', todoStore.getState());
-});
-add.addEventListener('click', () => {
-  todoStore.dispatch({ type: ADD, valueType: 'add' });
-  console.log('a', todoStore);
-  console.log('d', todo);
-});
+// const add = document.querySelector('#add');
+// const del = document.querySelector('#DEL');
+// const to = document.querySelector('#to');
+// const todoList = document.querySelector('#todo');
+
+// const ADD = 'ADD';
+// const DEL = 'DEL';
+// let todo = [];
+// const todoReducer = (state, action) => {
+//   console.log(state);
+//   console.log(action.type);
+//   switch (action.type) {
+//     case ADD:
+//       console.log(state);
+//       return [to.value, action.valueType];
+//     case DEL:
+//       return [to.value, action.valueType, action.id];
+//     default:
+//       break;
+//   }
+// };
+// const todoStore = createStore(todoReducer);
+
+// todoStore.subscribe(() => {
+//   const h = document.createElement('li');
+//   const btn = document.createElement('button');
+//   h.textContent = todoStore.getState()[0];
+//   btn.textContent = '제거';
+//   btn.id = Date.now();
+//   if (todoStore.getState()[1] == 'add') {
+//     btn.onclick = (e) => {
+//       todoStore.dispatch({ type: DEL, id: e.target.id, valueType: 'del' });
+//     };
+//     h.appendChild(btn);
+//     todoList.appendChild(h);
+//   } else {
+//     for (let i = 0; i < todoList.children.length; i++) {
+//       if (todoStore.getState()[2] === todoList.children[i].children[0].id) {
+//         todoList.children[i].remove();
+//       }
+//     }
+//   }
+//   //getState()는 저장소에서 최신 상태의 값을 반환할때 쓰는 메소드
+//   // todo.appendChild(todoList.innerText);
+//   console.log(todoList);
+
+//   console.log('a', todoStore.getState());
+// });
+// add.addEventListener('click', () => {
+//   todoStore.dispatch({ type: ADD, valueType: 'add' });
+//   console.log('a', todoStore);
+//   console.log('d', todo);
+// });
 
 // const add = document.querySelector('#add');
 // const minus = document.querySelector('#minus');
