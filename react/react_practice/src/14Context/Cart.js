@@ -1,19 +1,35 @@
 import { useContext } from 'react';
 import CartContext from './store/CartList';
-import ProductContext from './store/ProductList';
+
+const products = [
+  { id: 1, name: 'banana', price: 3000 },
+  { id: 2, name: 'apple', price: 2000 },
+  { id: 3, name: 'grape', price: 1000 },
+];
+let sum = 0;
+
+const m = () => {};
 
 export const Cart = () => {
-  const cart = useContext(CartContext);
-  const Pro = useContext(ProductContext);
+  const { cartItem, setCartItem } = useContext(CartContext);
+  const addProduct = (product) => {
+    setCartItem([...cartItem, product]);
+  };
 
-  console.log(Pro);
   return (
     <div>
-      <h2> {Pro.productItem}</h2>
-      {/* <select value={value.thema} onChange={(e) => value.setThema(e.target.value)}>
-        <option value="light">라이트</option>
-        <option value="dark">다크</option>
-      </select> */}
+      <h2>상품목록</h2>
+
+      {products.map((value) => {
+        return (
+          <div kwy={value.id}>
+            <span>
+              {value.name}: {value.price}
+              <button onClick={() => addProduct(value)}>+</button>
+            </span>
+          </div>
+        );
+      })}
     </div>
   );
 };

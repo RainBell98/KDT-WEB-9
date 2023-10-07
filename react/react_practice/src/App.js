@@ -19,7 +19,7 @@ import { FormPrac1 } from './13Form/FormPrac1';
 import { ContextPrac1, ContextPrac1_2 } from './14Context/ContextPrac1';
 import { CartProvider } from './14Context/store/CartList';
 import { UserProvider, UserProvider1 } from './14Context/store/ContextPrac1S';
-import { ProductProvider } from './14Context/store/ProductList';
+import { ProductList } from './14Context/ProductList';
 import { PracScss1 } from './Style/prac1';
 import { PracStyle2 } from './Style/pracStyle2';
 import { PracStyle3 } from './Style/pracStyle3';
@@ -67,9 +67,11 @@ function App() {
       <UserProvider1>
         <ContextPrac1_2></ContextPrac1_2>
       </UserProvider1> */}
-      <ProductProvider>
+
+      <CartProvider>
         <Cart></Cart>
-      </ProductProvider>
+        <ProductList></ProductList>
+      </CartProvider>
     </>
   );
 }
