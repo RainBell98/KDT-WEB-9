@@ -9,7 +9,6 @@ export const Main = () => {
   //자동으로 subscribe를 하고 있기 때무에 데이터가 변형되면 컴포넌트가 재실행
   const todos = useSelector((state) => state);
 
-  //dispatch는 우리가 호출할 수 있는 함수
   const dispatch = useDispatch();
   const onSubmit = (e) => {
     e.preventDefault();
@@ -24,10 +23,7 @@ export const Main = () => {
     <div>
       <form onSubmit={onSubmit}>
         <h2>todo</h2>
-        {/* <input id="to" placeholder="Write to do" />
-      <button id="add">Add</button>
-      <br />
-      <ul id="todo"></ul> */}
+
         <input value={text} onChange={(e) => setText(e.target.value)}></input>
         <button></button>
         <ul>
