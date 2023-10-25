@@ -23,7 +23,7 @@ export const Main = () => {
     <div>
       <form onSubmit={onSubmit}>
         <h2>todo</h2>
-
+        
         <input value={text} onChange={(e) => setText(e.target.value)}></input>
         <button></button>
         <ul>

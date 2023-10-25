@@ -4,7 +4,7 @@ const PORT = 8000;
 const db = require('./models');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
-const jwt = require('jsonwebtoken')
+
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
